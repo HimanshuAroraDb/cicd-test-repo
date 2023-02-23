@@ -23,7 +23,7 @@ jobs:
     # Set env variables
     env:
       DATABRICKS_URL: https://adb-984752964297111.11.azuredatabricks.net
-      PROD_REPO_ID: 2209624055323703
+      PROD_REPO_PATH: /Repos/cicd-test-repo-prod/cicd-test-repo
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -51,4 +51,4 @@ jobs:
       # Update databricks prod repo with latest code in master branch
       - name: Update databricks prod repo
         run: |
-          databricks repos update --repo-id ${{ env.PROD_REPO_ID }} --branch main
+          databricks repos update --path ${{ env.PROD_REPO_PATH }} --branch main
