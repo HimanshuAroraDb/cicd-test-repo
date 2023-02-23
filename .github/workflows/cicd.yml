@@ -51,4 +51,4 @@ jobs:
       # Update databricks prod repo with latest code in master branch
       - name: Update databricks prod repo
         run: |
-          databricks repos update --repo-id $PROD_REPO_ID --branch main
+          databricks repos update --repo-id ${{ env.PROD_REPO_ID }} --branch main
